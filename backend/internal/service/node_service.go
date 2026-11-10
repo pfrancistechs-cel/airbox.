@@ -236,3 +236,4 @@ func (s *NodeService) RestoreVersion(ctx context.Context, ownerID, nodeID, versi
 
 	return node, nil
 }
+

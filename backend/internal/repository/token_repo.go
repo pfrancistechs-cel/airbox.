@@ -82,3 +82,4 @@ func (r *TokenRepository) CleanupExpired(ctx context.Context) error {
 	_, err := r.db.Pool.Exec(ctx, query)
 	return err
 }
+

@@ -64,3 +64,4 @@ func (r *ShareRepository) DeleteByNodeID(ctx context.Context, nodeID uuid.UUID) 
 	_, err := r.db.Pool.Exec(ctx, query, nodeID)
 	return err
 }
+

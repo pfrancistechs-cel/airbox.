@@ -14,3 +14,4 @@ type StorageProvider interface {
 	GenerateDownloadURL(publicID, resourceType string, expiresInSeconds int) (string, error)
 	DeleteFile(publicID, resourceType string) error
 }
+

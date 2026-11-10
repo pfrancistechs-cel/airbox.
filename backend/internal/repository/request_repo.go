@@ -102,3 +102,4 @@ func (r *RequestRepository) Deactivate(ctx context.Context, id uuid.UUID, ownerI
 	_, err := r.db.Pool.Exec(ctx, query, id, ownerID)
 	return err
 }
+

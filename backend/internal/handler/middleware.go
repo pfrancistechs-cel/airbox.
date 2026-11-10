@@ -131,3 +131,4 @@ func GetUserID(c *gin.Context) (uuid.UUID, bool) {
 	uid, ok := val.(uuid.UUID)
 	return uid, ok
 }
+

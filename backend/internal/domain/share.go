@@ -16,3 +16,4 @@ type SharedLink struct {
 	AllowDownload bool       `json:"allow_download"`
 	CreatedAt     time.Time  `json:"created_at"`
 }
+

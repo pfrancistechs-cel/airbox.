@@ -22,7 +22,7 @@ async function deriveKey(passphrase: string, salt: Uint8Array): Promise<CryptoKe
   return window.crypto.subtle.deriveKey(
     {
       name: "PBKDF2",
-      salt: salt,
+      salt: salt as any,
       iterations: PBKDF2_ITERATIONS,
       hash: "SHA-256",
     },
@@ -51,7 +51,7 @@ export async function encryptVaultFile(file: File, passphrase: string): Promise<
   const ciphertext = await window.crypto.subtle.encrypt(
     {
       name: "AES-GCM",
-      iv: iv,
+      iv: iv as any,
     },
     key,
     fileBytes
@@ -89,10 +89,10 @@ export async function decryptVaultFile(
     const decryptedBytes = await window.crypto.subtle.decrypt(
       {
         name: "AES-GCM",
-        iv: iv,
+        iv: iv as any,
       },
       key,
-      ciphertext
+      ciphertext as any
     );
     return new Blob([decryptedBytes], { type: originalMimeType });
   } catch {

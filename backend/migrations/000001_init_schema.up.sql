@@ -92,3 +92,4 @@ CREATE TABLE IF NOT EXISTS file_requests (
 );
 
 CREATE INDEX IF NOT EXISTS idx_file_requests_token ON file_requests(token);
+

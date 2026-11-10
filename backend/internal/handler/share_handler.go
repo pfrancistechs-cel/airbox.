@@ -116,3 +116,4 @@ func (h *ShareHandler) GetSharedDownloadURL(c *gin.Context) {
 		"expires_in":   60,
 	})
 }
+

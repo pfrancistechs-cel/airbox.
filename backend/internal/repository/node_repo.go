@@ -292,3 +292,4 @@ func (r *NodeRepository) CheckCircularParent(ctx context.Context, nodeID, target
 	err := r.db.Pool.QueryRow(ctx, query, targetParentID, nodeID).Scan(&isCircular)
 	return isCircular, err
 }
+

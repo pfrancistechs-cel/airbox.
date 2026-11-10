@@ -96,3 +96,4 @@ func (r *UserRepository) UpdateStorageUsed(ctx context.Context, userID uuid.UUID
 	_, err := r.db.Pool.Exec(ctx, query, userID, deltaBytes)
 	return err
 }
+

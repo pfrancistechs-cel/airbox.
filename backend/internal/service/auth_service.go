@@ -192,3 +192,4 @@ func (s *AuthService) Logout(ctx context.Context, refreshTokenStr string) error 
 func (s *AuthService) GetProfile(ctx context.Context, userID uuid.UUID) (*domain.User, error) {
 	return s.userRepo.GetByID(ctx, userID)
 }
+

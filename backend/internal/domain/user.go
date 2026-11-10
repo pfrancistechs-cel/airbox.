@@ -25,3 +25,4 @@ type RefreshToken struct {
 	Revoked   bool      `json:"revoked"`
 	CreatedAt time.Time `json:"created_at"`
 }
+

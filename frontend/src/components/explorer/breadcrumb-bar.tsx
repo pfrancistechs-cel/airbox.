@@ -52,3 +52,4 @@ export function BreadcrumbBar({ breadcrumbs, onNavigate, isVault }: BreadcrumbBa
     </nav>
   );
 }
+

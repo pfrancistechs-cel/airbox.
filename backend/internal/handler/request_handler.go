@@ -143,3 +143,4 @@ func (h *RequestHandler) CompleteDropzoneUpload(c *gin.Context) {
 
 	c.JSON(http.StatusCreated, node)
 }
+

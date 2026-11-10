@@ -39,3 +39,4 @@ services:
 
 volumes:
   airbox_pgdata:
+

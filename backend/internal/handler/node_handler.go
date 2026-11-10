@@ -206,3 +206,4 @@ func (h *NodeHandler) RestoreVersion(c *gin.Context) {
 
 	c.JSON(http.StatusOK, node)
 }
+

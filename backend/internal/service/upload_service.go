@@ -166,3 +166,4 @@ func (s *UploadService) GetDownloadURL(ctx context.Context, ownerID, nodeID uuid
 
 	return s.storage.GenerateDownloadURL(*node.StoragePublicID, resType, 60)
 }
+

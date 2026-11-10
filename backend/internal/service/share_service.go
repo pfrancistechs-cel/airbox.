@@ -133,3 +133,4 @@ func (s *ShareService) GetSharedDownloadURL(ctx context.Context, token, password
 	}
 	return s.storage.GenerateDownloadURL(*resp.Node.StoragePublicID, resType, 60)
 }
+

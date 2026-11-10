@@ -85,3 +85,4 @@ func (h *UploadHandler) GetDownloadURL(c *gin.Context) {
 		"expires_in":   60,
 	})
 }
+

@@ -112,3 +112,4 @@ export function UploadDrawer({ items, onClear, onRemoveItem }: UploadDrawerProps
     </div>
   );
 }
+

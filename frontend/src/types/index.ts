@@ -90,3 +90,4 @@ export interface UploadProgressItem {
   errorMessage?: string;
   isVault?: boolean;
 }
+

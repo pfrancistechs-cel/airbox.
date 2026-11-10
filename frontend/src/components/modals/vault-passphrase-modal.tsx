@@ -102,3 +102,4 @@ export function VaultPassphraseModal({
     </div>
   );
 }
+

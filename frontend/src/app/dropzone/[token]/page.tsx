@@ -277,3 +277,4 @@ export default function DropzonePage({ params }: { params: Promise<{ token: stri
     </main>
   );
 }
+

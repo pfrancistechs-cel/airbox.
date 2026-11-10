@@ -126,3 +126,4 @@ func (c *CloudinaryStorage) DeleteFile(publicID, resourceType string) error {
 
 	return nil
 }
+

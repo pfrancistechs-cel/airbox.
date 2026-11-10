@@ -151,3 +151,4 @@ export function Sidebar({ currentTab, onTabChange }: SidebarProps) {
     </aside>
   );
 }
+
