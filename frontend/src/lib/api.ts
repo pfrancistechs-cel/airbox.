@@ -34,6 +34,9 @@ api.interceptors.response.use(
     ) {
       originalRequest._retry = true;
       try {
+        if (typeof window === "undefined") {
+          throw new Error("No window context");
+        }
         const refreshToken = localStorage.getItem("airbox_refresh_token");
         if (!refreshToken) {
           throw new Error("No refresh token");
@@ -44,16 +47,20 @@ api.interceptors.response.use(
         });
 
         const { access_token, refresh_token } = res.data;
-        localStorage.setItem("airbox_access_token", access_token);
-        localStorage.setItem("airbox_refresh_token", refresh_token);
+        if (typeof window !== "undefined") {
+          localStorage.setItem("airbox_access_token", access_token);
+          localStorage.setItem("airbox_refresh_token", refresh_token);
+        }
 
         originalRequest.headers.Authorization = `Bearer ${access_token}`;
         return api(originalRequest);
       } catch (refreshErr) {
-        localStorage.removeItem("airbox_access_token");
-        localStorage.removeItem("airbox_refresh_token");
-        if (typeof window !== "undefined" && !window.location.pathname.startsWith("/login")) {
-          window.location.href = "/login";
+        if (typeof window !== "undefined") {
+          localStorage.removeItem("airbox_access_token");
+          localStorage.removeItem("airbox_refresh_token");
+          if (!window.location.pathname.startsWith("/login")) {
+            window.location.href = "/login";
+          }
         }
         return Promise.reject(refreshErr);
       }

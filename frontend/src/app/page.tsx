@@ -207,7 +207,9 @@ export default function DashboardPage() {
         formData.append("api_key", signData.api_key);
         formData.append("timestamp", signData.timestamp.toString());
         formData.append("signature", signData.signature);
-        formData.append("folder", signData.folder);
+        if (signData.folder) {
+          formData.append("folder", signData.folder);
+        }
         formData.append("type", signData.type);
 
         const cloudinaryURL = `https://api.cloudinary.com/v1_1/${signData.cloud_name}/auto/upload`;
